@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Puntos para Raglán (0-24 meses) - Rincón de Labores</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <header>
+        <h1>🧶 Calculadora de Puntos Raglán</h1>
+        <p>Calcula los puntos y repartos para tejer un jersey o chaqueta de 0 a 24 meses, adaptado a tu muestra de tensión.</p>
+    </header>
+
+    <main>
+        <section id="entrada-datos">
+            <h2>1. Datos de la Muestra</h2>
+            <form id="formulario-calculo">
+                
+                <div class="campo">
+                    <label for="puntosMuestra">Puntos en 10 cm de muestra:</label>
+                    <input type="number" id="puntosMuestra" name="puntosMuestra" min="1" required placeholder="Ej: 20">
+                </div>
+
+                <div class="campo">
+                    <label for="tallaSeleccionada">Selecciona la Talla:</label>
+                    <select id="tallaSeleccionada" name="tallaSeleccionada" required>
+                        <option value="">-- Elige una talla --</option>
+                        <option value="0m">0 - 1 Mes</option>
+                        <option value="1m">1 - 3 Meses</option>
+                        <option value="3m">3 - 6 Meses</option>
+                        <option value="6m">6 - 9 Meses</option>
+                        <option value="9m">9 - 12 Meses</option>
+                        <option value="12m">12 - 18 Meses</option>
+                        <option value="18m">18 - 24 Meses</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="btnCalcular">Calcular Puntos</button>
+            </form>
+        </section>
+
+        <section id="resultados" class="oculto">
+            <h2>2. ✨ Resultados del Cálculo</h2>
+            
+            <div id="resultadoTotal" class="resaltado">
+                <p>Puntos totales a montar para el escote:</p>
+                <p class="numero-grande" id="totalPuntosEscote">0</p>
+            </div>
+
+            <h3>📊 Reparto de Puntos (Raglán Básico)</h3>
+            <table id="tablaReparto">
+                <thead>
+                    <tr>
+                        <th>Parte</th>
+                        <th>Puntos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Espalda</td><td id="puntosEspalda">0</td></tr>
+                    <tr><td>Delantero (Total)</td><td id="puntosDelantero">0</td></tr>
+                    <tr><td>Mangas (cada una)</td><td id="puntosManga">0</td></tr>
+                    <tr><td>Líneas Raglán (Total 4)</td><td id="puntosRaglan">4</td></tr>
+                </tbody>
+            </table>
+
+            <h3>📏 Medidas Finales Estimadas</h3>
+            <div id="medidasFinales">
+                <p>Largo total del Cuerpo (desde el cuello): <strong id="largoCuerpo">0 cm</strong></p>
+                <p>Largo total de la Manga (desde el hombro): <strong id="largoManga">0 cm</strong></p>
+            </div>
+
+            <blockquote class="nota">
+                **⚠️ NOTA IMPORTANTE:**
+                Si tejes una **chaqueta** (abierta), los puntos de la **tapeta/bordura** deben sumarse a los puntos del **delantero** antes de dividir. Si tejes un **jersey** (cerrado), no aplica.
+            </blockquote>
+        </section>
+    </main>
+
+    <footer>
+        <p>Hecho para <strong id="nombreTienda">Rincón de Labores</strong> de Alquerías, Murcia.</p>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+</html>
